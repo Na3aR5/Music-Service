@@ -2,7 +2,7 @@
 
 ## 1. Intent
 
-The goal is to model the data of a music streaming platform where users can listen to music, manage favourite tracks, create playlists, and artists can publish their own tracks and albums through an artist profile associated with their user account.
+The goal is to model the data of a music streaming platform where users can listen to music, create playlists, and artists can publish their own tracks and albums through an artist profile associated with their user account.
 
 The ER model should describe the main entities, their attributes, relationships, cardinalities, primary keys, and foreign keys required to represent these core platform features.
 
@@ -69,14 +69,6 @@ Represents a track included in a playlist and stores attributes specific to this
 * `position`
 * `added_at`
 
-### Favourite
-
-Represents a user's favourite track.
-
-* `user_id` — **PK, FK → User.user_id**
-* `track_id` — **PK, FK → Track.track_id**
-* `added_at`
-
 ## 3. Relationships
 
 * A **User** may have zero or one **Artist** profile. An **Artist** profile belongs to exactly one **User**.
@@ -85,7 +77,6 @@ Represents a user's favourite track.
 * An **Album** may contain zero or many **Tracks**. A **Track** may belong to zero or one **Album**.
 * A **User** may create zero or many **Playlists**. Each **Playlist** belongs to exactly one **User**.
 * A **Playlist** contains zero or many **Tracks**, and a **Track** may be included in zero or many **Playlists**. The `PlaylistTrack` entity represents this relationship because the relationship has its own attributes (`position`, `added_at`).
-* A **User** may mark zero or many **Tracks** as favourites. A **Track** may be favourited by zero or many **Users**. The `Favourite` entity represents this many-to-many relationship.
 
 ## 4. Acceptance criteria
 
@@ -97,7 +88,6 @@ Represents a user's favourite track.
 6. The model represents that an album can contain multiple tracks, while a track belongs to at most one album.
 7. The model represents playlists owned by users.
 8. The model represents the many-to-many relationship between playlists and tracks through `PlaylistTrack`, which contains relationship-specific attributes.
-9. The model represents the many-to-many relationship between users and favourite tracks through `Favourite`.
 10. The model contains no physical database implementation such as SQL DDL, ORM classes, indexes, or database-specific types.
 11. The resulting ER diagram clearly shows all entities, PKs, FKs, relationships, and their cardinalities.
 12. The model is consistent with the domain description in `README.md`.
