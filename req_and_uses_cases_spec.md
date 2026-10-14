@@ -45,15 +45,14 @@ Define the system's actors, functional requirements using EARS, user stories, us
   - FR-12: IF a user who already has an artist profile attempts to create another artist profile, THEN the system SHALL reject the request and SHALL preserve the existing profile.
   - FR-13: WHEN an authenticated user who owns an artist profile submits valid album information, the system SHALL create an album associated with that artist profile.
   - FR-14: WHEN an authenticated user who owns an artist profile submits valid track information and an available audio resource, the system SHALL register a track associated with that artist.
-  - FR-15: IF a track is associated with an album, THEN the system SHALL ensure that the track's artist and the album's artist are the same before saving the association.
 
 ### Artist Following
-  - FR-16: WHEN an authenticated user requests to follow an existing artist they do not already follow, the system SHALL create an ArtistFollower relationship between that user and artist.
-  - FR-17: IF an authenticated user attempts to follow the same artist more than once, THEN the system SHALL preserve at most one active follow relationship for that user-artist pair.
-  - FR-18: WHEN an authenticated user requests to unfollow an artist they currently follow, the system SHALL remove the corresponding ArtistFollower relationship without deleting the artist or the user's account.
+  - FR-15: WHEN an authenticated user requests to follow an existing artist they do not already follow, the system SHALL create an ArtistFollower relationship between that user and artist.
+  - FR-16: IF an authenticated user attempts to follow the same artist more than once, THEN the system SHALL preserve at most one active follow relationship for that user-artist pair.
+  - FR-17: WHEN an authenticated user requests to unfollow an artist they currently follow, the system SHALL remove the corresponding ArtistFollower relationship without deleting the artist or the user's account.
 
 ### Monthly Statistics
-  - FR-19: WHEN an authorized artist requests monthly statistics for a month for which statistics have been recorded, the system SHALL display the corresponding `ArtistMonthlyStats.play_count` value.
+  - FR-18: WHEN an authorized artist requests monthly statistics for a month for which statistics have been recorded, the system SHALL display the corresponding `ArtistMonthlyStats.play_count` value.
 
 ## User Stories
   - US-01: As a listener, I want to authenticate so that I can access my account and protected features. (FR-01, FR-02)
