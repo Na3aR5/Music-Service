@@ -34,25 +34,26 @@ Define the system's actors, functional requirements using EARS, user stories, us
 
 ### Playlist Management
   - FR-05: WHEN an authenticated user submits a valid playlist name, the system SHALL create a playlist owned by that user and persist its name and ownership relationship.
-  - FR-06: WHEN a playlist owner requests adding an existing track to their playlist, the system SHALL create a playlist-track association with a valid position and SHALL preserve the relationship between the playlist and the track.
-  - FR-07: WHEN a playlist owner requests removing a track from their playlist, the system SHALL remove the corresponding playlist-track association without deleting the underlying track.
-  - FR-08: IF a user attempts to modify a playlist that they do not own, THEN the system SHALL reject the operation and SHALL NOT modify the playlist.
-  - FR-09: WHEN a playlist owner submits a valid new order for tracks in their playlist, the system SHALL persist the updated positions without changing track ownership or deleting the tracks.
+  - FR-06: WHEN an authenticated user requests deleting their created playlist, the system SHALL delete playlist and remove relationship between user and this playlist.
+  - FR-07: WHEN a playlist owner requests adding an existing track to their playlist, the system SHALL create a playlist-track association with a valid position and SHALL preserve the relationship between the playlist and the track.
+  - FR-08: WHEN a playlist owner requests removing a track from their playlist, the system SHALL remove the corresponding playlist-track association without deleting the underlying track.
+  - FR-09: IF a user attempts to modify a playlist that they do not own, THEN the system SHALL reject the operation and SHALL NOT modify the playlist.
+  - FR-10: WHEN a playlist owner submits a valid new order for tracks in their playlist, the system SHALL persist the updated positions without changing track ownership or deleting the tracks.
 
 ### Artist Profiles and Publishing
-  - FR-10: WHEN an authenticated user without an artist profile requests artist profile creation and provides valid profile information, the system SHALL create an artist profile associated with that user.
-  - FR-11: IF a user who already has an artist profile attempts to create another artist profile, THEN the system SHALL reject the request and SHALL preserve the existing profile.
-  - FR-12: WHEN an authenticated user who owns an artist profile submits valid album information, the system SHALL create an album associated with that artist profile.
-  - FR-13: WHEN an authenticated user who owns an artist profile submits valid track information and an available audio resource, the system SHALL register a track associated with that artist.
-  - FR-14: IF a track is associated with an album, THEN the system SHALL ensure that the track's artist and the album's artist are the same before saving the association.
+  - FR-11: WHEN an authenticated user without an artist profile requests artist profile creation and provides valid profile information, the system SHALL create an artist profile associated with that user.
+  - FR-12: IF a user who already has an artist profile attempts to create another artist profile, THEN the system SHALL reject the request and SHALL preserve the existing profile.
+  - FR-13: WHEN an authenticated user who owns an artist profile submits valid album information, the system SHALL create an album associated with that artist profile.
+  - FR-14: WHEN an authenticated user who owns an artist profile submits valid track information and an available audio resource, the system SHALL register a track associated with that artist.
+  - FR-15: IF a track is associated with an album, THEN the system SHALL ensure that the track's artist and the album's artist are the same before saving the association.
 
 ### Artist Following
-  - FR-15: WHEN an authenticated user requests to follow an existing artist they do not already follow, the system SHALL create an ArtistFollower relationship between that user and artist.
-  - FR-16: IF an authenticated user attempts to follow the same artist more than once, THEN the system SHALL preserve at most one active follow relationship for that user-artist pair.
-  - FR-17: WHEN an authenticated user requests to unfollow an artist they currently follow, the system SHALL remove the corresponding ArtistFollower relationship without deleting the artist or the user's account.
+  - FR-16: WHEN an authenticated user requests to follow an existing artist they do not already follow, the system SHALL create an ArtistFollower relationship between that user and artist.
+  - FR-17: IF an authenticated user attempts to follow the same artist more than once, THEN the system SHALL preserve at most one active follow relationship for that user-artist pair.
+  - FR-18: WHEN an authenticated user requests to unfollow an artist they currently follow, the system SHALL remove the corresponding ArtistFollower relationship without deleting the artist or the user's account.
 
 ### Monthly Statistics
-  - FR-18: WHEN an authorized artist requests monthly statistics for a month for which statistics have been recorded, the system SHALL display the corresponding `ArtistMonthlyStats.play_count` value.
+  - FR-19: WHEN an authorized artist requests monthly statistics for a month for which statistics have been recorded, the system SHALL display the corresponding `ArtistMonthlyStats.play_count` value.
 
 ## User Stories
   - US-01: As a listener, I want to authenticate so that I can access my account and protected features. (FR-01, FR-02)
