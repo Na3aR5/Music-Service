@@ -53,8 +53,6 @@ Define the system's actors, functional requirements using EARS, user stories, us
 
 ### Monthly Statistics
   - FR-18: WHEN an authorized artist requests monthly statistics for a month for which statistics have been recorded, the system SHALL display the corresponding `ArtistMonthlyStats.play_count` value.
-  - FR-19: IF no statistics record exists for the requested artist and month, THEN the system SHALL indicate that statistics are unavailable for that month and SHALL NOT present a fabricated play count.
-  - FR-20: WHEN monthly statistics are recorded or updated, the system SHALL ensure that play_count is a non-negative integer representing the total number of plays across all tracks belonging to the corresponding artist during the specified month.
 
 ## User Stories
   - US-01: As a listener, I want to authenticate so that I can access my account and protected features. (FR-01, FR-02)
