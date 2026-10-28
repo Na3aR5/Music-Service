@@ -324,13 +324,13 @@ sequenceDiagram
         PS->>PS: verifyOwnership(userId, playlist.user_id)
         PS-->>PC: return accessDenied("Not playlist owner")
         PC-->>User: showAccessDenied()
-        Note over PS,DB: Операція зміни не виконується; Playlist і PlaylistTrack залишаються незмінними
     else Плейлист належить поточному користувачу
         PS->>PS: validateRequestedOperation(operation, payload)
         PS-->>PC: return authorizedForChange
         PC-->>User: continueWithAuthorizedOperation()
     end
 
+    Note over PS,DB: За відмови Playlist і PlaylistTrack залишаються незмінними
     deactivate PS
     deactivate PC
 ```
