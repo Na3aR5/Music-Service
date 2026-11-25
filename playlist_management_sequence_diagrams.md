@@ -87,7 +87,7 @@ sequenceDiagram
     alt Плейлист існує та належить користувачу
         PS->>PR: detachOwner(playlistId, userId)
         activate PR
-        PR->>DB: UPDATE Playlist SET user_id = NULL WHERE playlist_id = playlistId AND user_id = userId
+        PR->>DB: DELETE FROM Playlist WHERE playlist_id = playlistId AND user_id = userId
         activate DB
         DB-->>PR: return rowsUpdated
         deactivate DB
