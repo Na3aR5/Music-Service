@@ -17,3 +17,10 @@ Activity-diagram fits well, because UC contains:
 ### Why not BPMN or State Machine
 - BPMN would be too complex notation for this specific domen.<br>
 - State machine describes lifecycle and state of objects, but UC mostly describe operations - not change of state
+
+## Prompt 2
+### Message
+"На основі проаналізованої предметної області згенеруй activity діаграму. Вимоги та критерії прописані у spec.md"
+
+### Result
+Generated `activity-diagram.md`
